@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "f0aced2e-9d1e-4328-ab8f-ac211f400360",
+		"name": "CS272 S26 AI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9136549"
+	},
+	"item": [
+		{
+			"name": "AI Completions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ENTER_YOUR_SECRET",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"role\": \"assistant\",\r\n        \"content\": \"Welcome to BadgerChatGPT! Ask me anything.\"\r\n    },\r\n    {\r\n        \"role\": \"user\",\r\n        \"content\": \"hey how are you\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cs272.cs.wisc.edu/rest/s26/hw10/ai",
+					"protocol": "https",
+					"host": [
+						"cs272",
+						"cs",
+						"wisc",
+						"edu"
+					],
+					"path": [
+						"rest",
+						"s26",
+						"hw10",
+						"ai"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

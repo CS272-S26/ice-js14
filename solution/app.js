@@ -3,13 +3,13 @@ const MY_SECRET = "";
 
 const courseDivNode = document.getElementById("course-list");
 
-fetch("https://cs272.cs.wisc.edu/rest/s26/ice/courses")
+fetch("https://cs272.cs.wisc.edu/rest/s25/ice/courses")
 .then(res => res.json())
 .then(courses => {
     courses
         .map(c => createCourseComponent(c))
         .forEach(n => courseDivNode.appendChild(n));
-    fetch("https://cs272.cs.wisc.edu/rest/s26/ice/favorites", {
+    fetch("https://cs272.cs.wisc.edu/rest/s25/ice/favorites", {
         headers: {
             "Authorization": `Bearer ${MY_SECRET}`
         }
@@ -24,7 +24,7 @@ fetch("https://cs272.cs.wisc.edu/rest/s26/ice/courses")
 });
 
 function addFavorite(id) {
-    fetch("https://cs272.cs.wisc.edu/rest/s26/ice/favorites?courseId=" + id, {
+    fetch("https://cs272.cs.wisc.edu/rest/s25/ice/favorites?courseId=" + id, {
         method: "POST",
         headers: {
             "Authorization": `Bearer ${MY_SECRET}`
@@ -37,7 +37,7 @@ function addFavorite(id) {
 }
 
 function removeFavorite(id) {
-    fetch("https://cs272.cs.wisc.edu/rest/s26/ice/favorites?courseId=" + id, {
+    fetch("https://cs272.cs.wisc.edu/rest/s25/ice/favorites?courseId=" + id, {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${MY_SECRET}`
